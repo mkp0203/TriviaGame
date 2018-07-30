@@ -12,44 +12,55 @@ function game() {
   var q8 = document.forms["quiz"]["q8"].value;
   var q9 = document.forms["quiz"]["q9"].value;
   var q10 = document.forms["quiz"]["q10"].value;
-  
-  // // validation
-  // for (i = 1; i <= total; i++) {
-  //   if (eval('q' + i) == null || eval('q' + i) == '') {
-  //     alert('Please provide an answer for #' + i);
-  //     return false;
-  //   }
-  // }
 
+  // Counting score
   var answers = ["a", "a", "b", "a", "d", "d", "b", "d", "b", "c"];
-
   for (i = 1; i <= total; i++) {
     if (eval('q' + i) == answers[i - 1]) {
       score++;
     }
   }
 
+  // Results
   var results = 
   "<h3>All done!</h3>" +
   "<p>Correct Answers: " + score + "</p>" +
   "<p>Incorrect Answers: " + (total - score) + "</p>" +
   "<p>Total Score: " + ((score / total) * 100) + "%";
-  
   document.querySelector('#board').innerHTML = results;
 
-
+  // Not actually submitting anything
   return false;
 }
 
+//Timer
 var time = 15;
-var timer = setInterval(function() {
+var timer = setInterval(timerCount,1000);
+
+function timerCount() {
   time--;
   document.getElementById("timer").textContent = time;
   if (time <= 10 && time != 0) {
-    document.getElementById("timer").style.color = "white";
-    document.getElementById("timer").style.background = "red";
+    red();
   } else if (time < 1) {
     game();
     clearInterval(timer);
+    reloadButton();
   }
-},1000);
+}
+
+// Color the timer red when under 10 seconds
+function red() {
+  document.getElementById("timer").style.color = "white";
+  document.getElementById("timer").style.background = "red";
+}
+
+// Turn timer into restart button
+function reloadButton() {
+  document.getElementById("timer").innerHTML = "<button id='restart' class='btn' onclick='return reload()'>Restart</button>";
+}
+
+//Reload Page on button click
+function reload() {
+  document.location.reload();
+}
