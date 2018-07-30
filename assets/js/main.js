@@ -21,6 +21,7 @@ function game() {
     if (eval('q' + i) == answers[i - 1]) {
       score++;
     }
+    console.log(eval('q' + i) + answers[i - 1]);
   }
 
   // Results
