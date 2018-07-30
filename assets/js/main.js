@@ -1,4 +1,6 @@
 function game() {
+  stopTimer();
+
   var total = 10;
   var score = 0;
 
@@ -23,7 +25,7 @@ function game() {
 
   // Results
   var results = 
-  "<h3>All done!</h3>" +
+  "<h5>All done!</h5>" +
   "<p>Correct Answers: " + score + "</p>" +
   "<p>Incorrect Answers: " + (total - score) + "</p>" +
   "<p>Total Score: " + ((score / total) * 100) + "%";
@@ -34,19 +36,25 @@ function game() {
 }
 
 //Timer
-var time = 15;
-var timer = setInterval(timerCount,1000);
+var time = 12;
+var timer = setInterval(timerCounter,1000);
 
-function timerCount() {
+function timerCounter() {
   time--;
   document.getElementById("timer").textContent = time;
   if (time <= 10 && time != 0) {
     red();
   } else if (time < 1) {
-    game();
     clearInterval(timer);
+    game();
     reloadButton();
   }
+}
+
+// Stops the timer when the form is submitted
+function stopTimer() {
+  clearTimeout(timer);
+  reloadButton();
 }
 
 // Color the timer red when under 10 seconds

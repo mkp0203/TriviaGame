@@ -11,13 +11,14 @@ body {
 
 .card-header {
     text-align: center;
+    font-weight: bold;
     font-size: 60px;
     padding-top: 15px;
     background: #bffffc;
 }
 
 .card-body {
-    background: #ffdcaf;
+    background: #fde8cd;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -45,4 +46,5 @@ input {
     color: white;
     font-weight: bold;
     height: 75px;
+    font-size: 26px;
 }
