@@ -4,7 +4,7 @@ body {
 
 .card {
     font-family: 'Asap', sans-serif;
-    margin: 50px 0px 50px
+    margin: 50px 0px 50px 0px;
 }
 
 .card-header {
@@ -23,7 +23,7 @@ input {
 
 #timer {
     width: 10%;
-    margin: 10px;
+    margin: 50px 10px 0px 10px;
     text-align: center;
     font-size: 50px;
 }
