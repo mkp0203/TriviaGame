@@ -3,52 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Game Trivia</title>
+    <title>The Office Trivia</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Javascript -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/timer.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
 </head>
 <body>
+    <div class="card fixed-top float-right" id="timer">
+        <div class="card-body">
+
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header">Welcome to my trivia game!</div>
-                    <div class="card-body">
+                    <div class="card-header">
+                        <p>The Office Trivia</p>
+                        <!-- <img src="assets/img/badge.png" alt="The Office Logo" class="img-responsive"> -->
+                    </div>
+                    <div class="card-body" id="board">
                         <div id="time-remaining"></div>
-                        <form name="quiz" onsubmit="return game()">
-                            <h5>1. What is my first name?</h5>
-                            <input type="radio" name="q1" value="a" id="q1a"> Steve <br>
-                            <input type="radio" name="q1" value="b" id="q1b"> Jack <br>
-                            <input type="radio" name="q1" value="c" id="q1c"> Michael <br>
-                            <input type="radio" name="q1" value="d" id="q1d"> Jordan <br>
-                            <br>
-                            <h5>2. What is my middle name?</h5>
-                            <input type="radio" name="q2" value="a" id="q2a"> Kenneth <br>
-                            <input type="radio" name="q2" value="b" id="q2b"> Colin <br>
-                            <input type="radio" name="q2" value="c" id="q2c"> Brent <br>
-                            <input type="radio" name="q2" value="d" id="q2d"> Canada <br>
-                            <br>
-                            <h5>3. What is my last name?</h5>
-                            <input type="radio" name="q3" value="a" id="q3a"> Rodriguez <br>
-                            <input type="radio" name="q3" value="b" id="q3b"> Pataky <br>
-                            <input type="radio" name="q3" value="c" id="q3c"> Smith <br>
-                            <input type="radio" name="q3" value="d" id="q3d"> Wendel <br>
-                            <br>
-                            <h5>4. What is my favorite sport?</h5>
-                            <input type="radio" name="q4" value="a" id="q4a"> Baseball <br>
-                            <input type="radio" name="q4" value="b" id="q4b"> Basketball <br>
-                            <input type="radio" name="q4" value="c" id="q4c"> Hockey <br>
-                            <input type="radio" name="q4" value="d" id="q4d"> Basket Weaving <br>
-                            <br>
-                            <h5>5. What is my pets name?</h5>
-                            <input type="radio" name="q5" value="a" id="q5a"> Sugar <br>
-                            <input type="radio" name="q5" value="b" id="q5b"> Ginger <br>
-                            <input type="radio" name="q5" value="c" id="q5c"> Arya <br>
-                            <input type="radio" name="q5" value="d" id="q5d"> Scruffy <br>
-                            <br><br>
+                        <form id="quiz" name="quiz" onsubmit="return game()">
+                            <h5>1. What is the name of Stanley's beach games team?</h5>
+                            <input type="radio" name="q1" value="a" id="q1a"> The Blue Team <br>
+                            <input type="radio" name="q1" value="b" id="q1b"> The Red Team <br>
+                            <input type="radio" name="q1" value="c" id="q1c"> Voldemort <br>
+                            <input type="radio" name="q1" value="d" id="q1d"> Silver Snakes <br>
+                            <hr>
+                            <h5>2. What part Native American does Michael claim to be?</h5>
+                            <input type="radio" name="q2" value="a" id="q2a"> Two-Fifteenths <br>
+                            <input type="radio" name="q2" value="b" id="q2b"> Eight-Halves <br>
+                            <input type="radio" name="q2" value="c" id="q2c"> One-Quarter <br>
+                            <input type="radio" name="q2" value="d" id="q2d"> Three-Tenths <br>
+                            <hr>
+                            <h5>3. Name one of Meredith's favorite movies?</h5>
+                            <input type="radio" name="q3" value="a" id="q3a"> The Matrix <br>
+                            <input type="radio" name="q3" value="b" id="q3b"> Legally Blonde <br>
+                            <input type="radio" name="q3" value="c" id="q3c"> V for Vendetta <br>
+                            <input type="radio" name="q3" value="d" id="q3d"> Threat Level: Midnight <br>
+                            <hr>
+                            <h5>4. What is Michael's password to his computer?</h5>
+                            <input type="radio" name="q4" value="a" id="q4a"> 1 2 3 <br>
+                            <input type="radio" name="q4" value="b" id="q4b"> A B C D <br>
+                            <input type="radio" name="q4" value="c" id="q4c"> 7 7 7 <br>
+                            <input type="radio" name="q4" value="d" id="q4d"> Password <br>
+                            <hr>
+                            <h5>5. What type of mp3 player did Roy buy Pam for Christmas?</h5>
+                            <input type="radio" name="q5" value="a" id="q5a"> It was a cd player <br>
+                            <input type="radio" name="q5" value="b" id="q5b"> Apple iPod <br>
+                            <input type="radio" name="q5" value="c" id="q5c"> Zoom Cast <br>
+                            <input type="radio" name="q5" value="d" id="q5d"> Prism Duo-Sport <br>
+                            <hr>
+                            <h5>6. What does the back of the jersey say that Michael gets from Dwight?</h5>
+                            <input type="radio" name="q6" value="a" id="q6a"> Scott <br>
+                            <input type="radio" name="q6" value="b" id="q6b"> Schrute <br>
+                            <input type="radio" name="q6" value="c" id="q6c"> From Dwight #1 <br>
+                            <input type="radio" name="q6" value="d" id="q6d"> Michael Scarn <br>
+                            <hr>
+                            <h5>7. Name one of the topics for conversation Jim and Ryan suggest to Dwight while filling the truck?</h5>
+                            <input type="radio" name="q7" value="a" id="q7a"> Basketball <br>
+                            <input type="radio" name="q7" value="b" id="q7b"> Ponies <br>
+                            <input type="radio" name="q7" value="c" id="q7c"> Dolls <br>
+                            <input type="radio" name="q7" value="d" id="q7d"> Paper <br>
+                            <hr>
+                            <h5>8. What does Michael call his new drink, mixing Vodka and Orange Juice?</h5>
+                            <input type="radio" name="q8" value="a" id="q8a"> Mimosa <br>
+                            <input type="radio" name="q8" value="b" id="q8b"> Orange Vodka <br>
+                            <input type="radio" name="q8" value="c" id="q8c"> Screw Driver <br>
+                            <input type="radio" name="q8" value="d" id="q8d"> Orange-vod-juice...ka <br>
+                            <hr>
+                            <h5>9. What soccer team was Jim on in 4th grade?</h5>
+                            <input type="radio" name="q9" value="a" id="q9a"> Razorbacks <br>
+                            <input type="radio" name="q9" value="b" id="q9b"> The Orange Team <br>
+                            <input type="radio" name="q9" value="c" id="q9c"> Fighting Cardinals <br>
+                            <input type="radio" name="q9" value="d" id="q9d"> Chili Peppers <br>
+                            <hr>
+                            <h5>10. What movie did Dwight expect to see when watching Wedding Crashers?</h5>
+                            <input type="radio" name="q10" value="a" id="q10a"> Inception <br>
+                            <input type="radio" name="q10" value="b" id="q10b"> The Lord of the Rings <br>
+                            <input type="radio" name="q10" value="c" id="q10c"> Grizzly Man <br>
+                            <input type="radio" name="q10" value="d" id="q10d"> The Perfect Storm <br>
+                            <hr>
                             <input type="submit" value="Submit" class="btn btn-primary">
                         </form>
                     </div>
