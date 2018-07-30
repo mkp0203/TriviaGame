@@ -36,7 +36,7 @@ function game() {
 }
 
 //Timer
-var time = 12;
+var time = 60;
 var timer = setInterval(timerCounter,1000);
 
 function timerCounter() {
