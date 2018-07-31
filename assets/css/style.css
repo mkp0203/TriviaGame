@@ -6,7 +6,7 @@ body {
     font-family: 'Asap', sans-serif;
     margin: 50px 0px 50px 0px;
     border: none;
-    box-shadow: 0px 0px 1px 1px white;
+    box-shadow: 0px 0px 8px 1px white;
 }
 
 .card-header {
@@ -14,11 +14,11 @@ body {
     font-weight: bold;
     font-size: 60px;
     padding-top: 15px;
-    background: #bffffc;
+    background: #d9fffd;
 }
 
 .card-body {
-    background: #fde8cd;
+    background: #fff7ed;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
